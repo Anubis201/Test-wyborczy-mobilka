@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { ResultPageRoutingModule } from './result-routing.module';
 
 import { ResultPage } from './result.page';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ResultPageRoutingModule
+    ResultPageRoutingModule,
+    SharedModule,
   ],
   declarations: [ResultPage]
 })

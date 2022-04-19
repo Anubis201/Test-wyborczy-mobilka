@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { LevelPageRoutingModule } from './level-routing.module';
 
 import { LevelPage } from './level.page';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    LevelPageRoutingModule
+    LevelPageRoutingModule,
+    SharedModule,
   ],
   declarations: [LevelPage]
 })
