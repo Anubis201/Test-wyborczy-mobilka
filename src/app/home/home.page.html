@@ -5,5 +5,8 @@
 </ion-header>
 
 <ion-content fullscreen>
-  <app-start-describe></app-start-describe>
+  <app-start-describe
+    *ngFor="let test of tests"
+    [test]="test"
+  ></app-start-describe>
 </ion-content>

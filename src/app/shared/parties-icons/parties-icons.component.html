@@ -1,3 +1,5 @@
-<p>
-  parties-icons works!
-</p>
+<img
+  *ngFor="let item of partiesArray"
+  [src]="'/assets/parties/' + partiesEnum[item] + '.png'"
+  [alt]="'ikona ' + partiesEnum[item]"
+>

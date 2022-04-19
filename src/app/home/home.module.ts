@@ -18,8 +18,8 @@ import { SharedModule } from '../shared/shared.module';
     SharedModule,
   ],
   declarations: [
-    HomePage,
     StartDescribeComponent,
-  ]
+    HomePage,
+  ],
 })
 export class HomePageModule {}
