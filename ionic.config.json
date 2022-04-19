@@ -1,0 +1,7 @@
+{
+  "name": "test wyborczy",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
