@@ -16,9 +16,11 @@ export class LevelPage implements OnInit {
   get data() { return this.levelService.data; }
   get isLoading() { return this.levelService.isLoading; }
   get currentQuestion() { return this.levelService.currentQuestion; }
+  get isAllQuestionChoosed() { return this.levelService.isAllQuestionChoosed; }
 
   ngOnInit() {
     this.levelService.getLevelData();
+    this.levelService.verifyIsAllQuestionChoosed();
   }
 
   onChangeCurrentQuestion(int: number) {

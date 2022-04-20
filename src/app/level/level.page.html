@@ -16,6 +16,7 @@
   <app-navigation
     [currentQuestion]="currentQuestion"
     [length]="data.questions.length - 1"
+    [isAllQuestionChoosed]="isAllQuestionChoosed"
     (changeCurrentQuestion)="onChangeCurrentQuestion($event)"
     (endTest)="onEndTest()"
   ></app-navigation>

@@ -19,6 +19,7 @@
     <button
       *ngIf="length === currentQuestion"
       (click)="endTest.emit()"
+      [disabled]="!isAllQuestionChoosed"
     >
       <ion-icon name="person-circle"></ion-icon>
       <div>Zakończ</div>
