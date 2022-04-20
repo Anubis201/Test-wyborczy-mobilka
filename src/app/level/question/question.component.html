@@ -3,22 +3,12 @@
 </div>
 
 <ion-list>
-  <ion-item *ngFor="let answer of question.answers; let index = index">
+  <ion-item *ngFor="let answer of question.answers; let index = index; trackBy:abra">
     <ion-label>{{ answer.text }}</ion-label>
     <ion-checkbox
       slot="start"
       [(ngModel)]="answer.isChoosed"
+      (ngModelChange)="changeAnswer.emit({ answerIndex: index, isChoosed: $event })"
     ></ion-checkbox>
   </ion-item>
-  <mat-checkbox
-    color="accent"
-    (click)="test()"
-  >
-    <div class="answers__item--contain">
-      <span>sadsdasdsa</span>
-    </div>
-  </mat-checkbox>
 </ion-list>
-
-<div     (click)="test()"
->dasdasdasdas</div>

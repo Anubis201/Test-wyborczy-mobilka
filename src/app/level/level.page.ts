@@ -32,6 +32,15 @@ export class LevelPage implements OnInit {
   }
 
   onChangeAnswer({ answerIndex, isChoosed }: { answerIndex: number; isChoosed: any }) {
-    console.log(isChoosed);
+    const questions = this.data.questions;
+
+    questions[this.currentQuestion]
+      .answers = questions[this.currentQuestion].answers
+      .map(answer => ({ ...answer, isChoosed: false }));
+
+    questions[this.currentQuestion].answers[answerIndex].isChoosed = isChoosed;
+
+    this.levelService.verifyIsAllQuestionChoosed(questions);
+    this.levelService.data.questions = questions;
   }
 }

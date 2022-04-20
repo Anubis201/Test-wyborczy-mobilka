@@ -1,10 +1,6 @@
-import { PointsModel } from './points.model';
+import { AnswerModel } from './answer.model';
 
 export interface QuestionModel {
   text: string;
-  answers: {
-    text: string;
-    isChoosed: boolean;
-    partiesPoints: PointsModel[];
-  }[];
+  answers: AnswerModel[];
 }

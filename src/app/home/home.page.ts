@@ -13,7 +13,4 @@ export class HomePage {
   constructor(
     private homeService: HomeService,
   ) {}
-  test() {
-    console.log('a');
-  }
 }

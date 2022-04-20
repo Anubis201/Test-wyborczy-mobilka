@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { AnswerModel } from 'src/models/interfaces/answer.model';
 import { QuestionModel } from 'src/models/interfaces/question.model';
 
 @Component({
@@ -10,8 +10,9 @@ import { QuestionModel } from 'src/models/interfaces/question.model';
 export class QuestionComponent {
   @Input() question: QuestionModel;
 
-  @Output() changeAnswer = new EventEmitter<{ answerIndex: number; isChoosed: any }>();
-  test() {
-    console.log('DSDAS');
+  @Output() changeAnswer = new EventEmitter<{ answerIndex: number; isChoosed: boolean }>();
+
+  abra(index: number, asnwer: AnswerModel) {
+    return asnwer.text;
   }
 }
