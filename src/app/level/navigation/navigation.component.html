@@ -5,7 +5,7 @@
       [disabled]="currentQuestion === 0"
     >
       <ion-icon name="chevron-back-circle"></ion-icon>
-      <span>W lewo</span>
+      <div>Poprzedni</div>
     </button>
 
     <button
@@ -13,7 +13,7 @@
       (click)="changeCurrentQuestion.emit(currentQuestion + 1)"
     >
       <ion-icon name="chevron-forward-circle"></ion-icon>
-      <span>W prawo</span>
+      <div>Następny</div>
     </button>
 
     <button
@@ -21,7 +21,7 @@
       (click)="endTest.emit()"
     >
       <ion-icon name="person-circle"></ion-icon>
-      <span>zakończ</span>
+      <div>Zakończ</div>
     </button>
   </ion-tab-bar>
 </ion-tabs>
