@@ -8,6 +8,8 @@ import { LevelPageRoutingModule } from './level-routing.module';
 
 import { LevelPage } from './level.page';
 import { SharedModule } from '../shared/shared.module';
+import { QuestionComponent } from './question/question.component';
+import { NavigationComponent } from './navigation/navigation.component';
 
 @NgModule({
   imports: [
@@ -17,6 +19,10 @@ import { SharedModule } from '../shared/shared.module';
     LevelPageRoutingModule,
     SharedModule,
   ],
-  declarations: [LevelPage]
+  declarations: [
+    LevelPage,
+    QuestionComponent,
+    NavigationComponent,
+  ]
 })
 export class LevelPageModule {}

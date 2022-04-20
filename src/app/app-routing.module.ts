@@ -7,11 +7,11 @@ const routes: Routes = [
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
   {
-    path: 'result',
+    path: 'wynik',
     loadChildren: () => import('./result/result.module').then( m => m.ResultPageModule)
   },
   {
-    path: 'level',
+    path: 'test',
     loadChildren: () => import('./level/level.module').then( m => m.LevelPageModule)
   },
   {

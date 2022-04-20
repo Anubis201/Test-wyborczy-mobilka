@@ -1,0 +1,27 @@
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <button
+      (click)="changeCurrentQuestion.emit(currentQuestion - 1)"
+      [disabled]="currentQuestion === 0"
+    >
+      <ion-icon name="chevron-back-circle"></ion-icon>
+      <span>W lewo</span>
+    </button>
+
+    <button
+      *ngIf="length !== currentQuestion"
+      (click)="changeCurrentQuestion.emit(currentQuestion + 1)"
+    >
+      <ion-icon name="chevron-forward-circle"></ion-icon>
+      <span>W prawo</span>
+    </button>
+
+    <button
+      *ngIf="length === currentQuestion"
+      (click)="endTest.emit()"
+    >
+      <ion-icon name="person-circle"></ion-icon>
+      <span>zakończ</span>
+    </button>
+  </ion-tab-bar>
+</ion-tabs>

@@ -5,7 +5,7 @@ import { LevelPage } from './level.page';
 
 const routes: Routes = [
   {
-    path: ':id',
+    path: ':title',
     component: LevelPage
   }
 ];

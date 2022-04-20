@@ -13,7 +13,19 @@ export class LevelPage implements OnInit {
     private levelService: LevelService,
   ) { }
 
+  get data() { return this.levelService.data; }
+  get isLoading() { return this.levelService.isLoading; }
+  get currentQuestion() { return this.levelService.currentQuestion; }
+
   ngOnInit() {
     this.levelService.getLevelData();
+  }
+
+  onChangeCurrentQuestion(int: number) {
+    this.levelService.currentQuestion = int;
+  }
+
+  onEndTest() {
+    this.levelService.handleEndTest();
   }
 }

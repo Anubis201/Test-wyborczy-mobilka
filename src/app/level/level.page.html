@@ -1,9 +1,20 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>level</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ng-container *ngIf="!isLoading">
 
-<ion-content>
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>{{ data.title }}</ion-title>
+    </ion-toolbar>
+  </ion-header>
 
-</ion-content>
+  <ion-content>
+    <app-question [question]="data.questions[currentQuestion]"></app-question>
+  </ion-content>
+
+  <app-navigation
+    [currentQuestion]="currentQuestion"
+    [length]="data.questions.length - 1"
+    (changeCurrentQuestion)="onChangeCurrentQuestion($event)"
+    (endTest)="onEndTest()"
+  ></app-navigation>
+
+</ng-container>
