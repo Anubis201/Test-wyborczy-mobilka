@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 import { IonicModule } from '@ionic/angular';
 
@@ -18,11 +19,12 @@ import { NavigationComponent } from './navigation/navigation.component';
     IonicModule,
     LevelPageRoutingModule,
     SharedModule,
+    MatCheckboxModule,
   ],
   declarations: [
     LevelPage,
     QuestionComponent,
     NavigationComponent,
-  ]
+  ],
 })
 export class LevelPageModule {}

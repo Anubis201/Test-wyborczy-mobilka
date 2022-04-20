@@ -28,4 +28,8 @@ export class LevelPage implements OnInit {
   onEndTest() {
     this.levelService.handleEndTest();
   }
+
+  onChangeAnswer({ answerIndex, isChoosed }: { answerIndex: number; isChoosed: any }) {
+    console.log(isChoosed);
+  }
 }

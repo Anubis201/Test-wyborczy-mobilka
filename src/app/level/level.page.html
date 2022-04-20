@@ -7,7 +7,10 @@
   </ion-header>
 
   <ion-content>
-    <app-question [question]="data.questions[currentQuestion]"></app-question>
+    <app-question
+      [question]="data.questions[currentQuestion]"
+      (changeAnswer)="onChangeAnswer($event)"
+    ></app-question>
   </ion-content>
 
   <app-navigation
