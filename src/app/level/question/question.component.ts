@@ -9,6 +9,8 @@ import { QuestionModel } from 'src/models/interfaces/question.model';
 })
 export class QuestionComponent {
   @Input() question: QuestionModel;
+  @Input() length: number;
+  @Input() currentQuestion: number;
 
   @Output() changeAnswer = new EventEmitter<{ answerIndex: number; isChoosed: boolean }>();
 

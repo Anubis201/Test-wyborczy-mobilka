@@ -9,5 +9,11 @@ ion-list {
   ion-item {
     --background: var(--ion-background-color);
     --border-color: grey;
+
+    ion-label {
+      overflow: inherit;
+      white-space: normal;
+      line-height: 23px;
+    }
   }
 }
