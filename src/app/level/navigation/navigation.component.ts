@@ -8,6 +8,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class NavigationComponent {
   @Input() currentQuestion: number;
   @Input() length: number;
+  @Input() isAllQuestionChoosed: boolean;
 
   @Output() changeCurrentQuestion = new EventEmitter<number>();
   @Output() endTest = new EventEmitter<void>();
