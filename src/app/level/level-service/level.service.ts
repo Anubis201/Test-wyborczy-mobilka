@@ -4,8 +4,11 @@ import { ModalController } from '@ionic/angular';
 import { ConfirmModalPage } from 'src/app/confirm-modal/confirm-modal.page';
 import { parlamentarne2023 } from 'src/app/data/2023-parlamentarne.data';
 import { parodiaPartii } from 'src/app/data/parodia-partii.data';
+import { ToolsService } from 'src/app/services/tools/tools.service';
+import { PartiesEnum } from 'src/models/enums/parties.enum';
 import { QuestionModel } from 'src/models/interfaces/question.model';
 import { TestModel } from 'src/models/interfaces/test.model';
+import { ResultType } from 'src/models/types/result.type';
 
 @Injectable()
 export class LevelService {
@@ -19,6 +22,7 @@ export class LevelService {
     private activatedRoute: ActivatedRoute,
     private router: Router,
     private modalController: ModalController,
+    private toolsService: ToolsService,
   ) { }
 
   getLevelData() {
@@ -34,7 +38,28 @@ export class LevelService {
   handleEndTest() {
     this.confirmModal('Wszystko gotowe. Chcesz zobaczyć dane?').then(val => {
       if (val.data.isConfirm) {
-        this.router.navigateByUrl('/wynik');
+        const result: Partial<ResultType> = {};
+
+        this.toolsService.convertEnumToArrray(PartiesEnum, 'number').forEach((ele: PartiesEnum) => {
+          result[ele] = 0;
+        });
+
+        this.data.questions.forEach(question => {
+          question.answers.every(answer => {
+            if (answer.isChoosed) {
+              answer.partiesPoints.forEach(all => {
+                result[all.party] = result[all.party] + all.points;
+              });
+              return false;
+            }
+            return true;
+          });
+        });
+
+        const sortableResult = Object.entries(result).sort(([, a], [, b]) => (a - b));
+        console.log(sortableResult.map(ele => ({ party: ele[0], points: ele[1] })).reverse());
+
+        // this.router.navigateByUrl('/wynik');
       }
     });
   }
