@@ -32,7 +32,7 @@ export class LevelService {
   }
 
   handleEndTest() {
-    this.confirmModal('Wszystko gotowe chcesz zobaczyć dane?').then(val => {
+    this.confirmModal('Wszystko gotowe. Chcesz zobaczyć dane?').then(val => {
       if (val.data.isConfirm) {
         this.router.navigateByUrl('/wynik');
       }
