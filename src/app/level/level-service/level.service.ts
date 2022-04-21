@@ -7,6 +7,7 @@ import { parodiaPartii } from 'src/app/data/parodia-partii.data';
 import { ToolsService } from 'src/app/services/tools/tools.service';
 import { PartiesEnum } from 'src/models/enums/parties.enum';
 import { QuestionModel } from 'src/models/interfaces/question.model';
+import { ResultModel } from 'src/models/interfaces/result.model';
 import { TestModel } from 'src/models/interfaces/test.model';
 import { ResultType } from 'src/models/types/result.type';
 
@@ -57,9 +58,10 @@ export class LevelService {
         });
 
         const sortableResult = Object.entries(result).sort(([, a], [, b]) => (a - b));
-        console.log(sortableResult.map(ele => ({ party: ele[0], points: ele[1] })).reverse());
 
-        // this.router.navigateByUrl('/wynik');
+        this.router.navigateByUrl('/wynik', {
+          state: sortableResult.map(ele => ({ party: parseInt(ele[0], 10), points: ele[1] })).reverse() as ResultModel[]
+        });
       }
     });
   }
