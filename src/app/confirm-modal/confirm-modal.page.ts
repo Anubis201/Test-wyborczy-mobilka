@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 
 @Component({
@@ -7,6 +7,7 @@ import { ModalController } from '@ionic/angular';
   styleUrls: ['./confirm-modal.page.scss'],
 })
 export class ConfirmModalPage {
+  @Input() text: string;
 
   constructor(private modalController: ModalController) { }
 

@@ -24,14 +24,19 @@ export class LevelService {
   getLevelData() {
     this.activatedRoute.params.subscribe({
       next: ({ title }: { title: string }) => {
-        this.data = [parlamentarne2023, parodiaPartii].find(ele => ele.title = title);
+        this.reset();
+        this.data = JSON.parse(JSON.stringify([parlamentarne2023, parodiaPartii].find(ele => ele.title = title)));
         this.isLoading = false;
       }
     });
   }
 
   handleEndTest() {
-    this.router.navigateByUrl('/wynik');
+    this.confirmModal('Wszystko gotowe chcesz zobaczyć dane?').then(val => {
+      if (val.data.isConfirm) {
+        this.router.navigateByUrl('/wynik');
+      }
+    });
   }
 
   verifyIsAllQuestionChoosed(questions: QuestionModel[] = this.data.questions) {
@@ -56,21 +61,25 @@ export class LevelService {
   }
 
   handleGoHome() {
-    this.confirmModal('Czy na pewno chcesz wrócić do wyboru testów? Dane zostaną utracone.').then(val => {
-      console.log(val);
+    this.confirmModal('Czy, aby na pewno chcesz wrócić do listy testów? Uwaga dane zostaną utracone!').then(val => {
+      if (val.data.isConfirm) {
+        this.router.navigateByUrl('/lista');
+      }
     });
   }
 
-  handleEnd() {
-
+  reset() {
+    this.data = null;
+    this.currentQuestion = 0;
+    this.isAllQuestionChoosed = false;
+    this.isNotCurrentQuestionChoosed = false;
+    this.isLoading = true;
   }
 
   async confirmModal(text: string) {
     const modal = await this.modalController.create({
       component: ConfirmModalPage,
-      componentProps: {
-        text
-      }
+      componentProps: { text }
     });
 
     modal.present();

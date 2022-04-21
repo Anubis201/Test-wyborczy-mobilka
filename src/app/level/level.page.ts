@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { LevelService } from './level-service/level.service';
 
 @Component({
@@ -48,9 +48,5 @@ export class LevelPage implements OnInit {
 
   onGoHome() {
     this.levelService.handleGoHome();
-  }
-
-  onEnd() {
-    this.levelService.handleEnd();
   }
 }

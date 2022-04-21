@@ -1,10 +1,29 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Potwierdź</ion-title>
+    <ion-title>Wybierz</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <button (click)="dismissModal(false)">CLose</button>
 
+  <ion-card>
+
+    <ion-card-header>
+
+      <ion-card-title>{{ text }}</ion-card-title>
+
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-button
+        color="success"
+        (click)="dismissModal(true)"
+      >Tak</ion-button>
+      <ion-button
+        color="danger"
+        (click)="dismissModal(false)"
+      >Nie</ion-button>
+    </ion-card-content>
+
+  </ion-card>
 </ion-content>

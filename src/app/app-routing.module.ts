@@ -3,7 +3,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'start',
+    path: 'lista',
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
   {
@@ -16,9 +16,10 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'start',
+    redirectTo: 'lista',
     pathMatch: 'full'
-  },  {
+  },
+  {
     path: 'confirm-modal',
     loadChildren: () => import('./confirm-modal/confirm-modal.module').then( m => m.ConfirmModalPageModule)
   },
