@@ -4,16 +4,31 @@
       (click)="changeCurrentQuestion.emit(currentQuestion - 1)"
       [disabled]="currentQuestion === 0"
     >
-      <ion-icon name="chevron-back-circle"></ion-icon>
-      <div>Poprzedni</div>
+      <ion-icon
+        name="chevron-back-circle"
+        color="success"
+      ></ion-icon>
+    </button>
+
+    <button
+      (click)="goHome.emit()"
+    >
+      <ion-icon
+        class="home-icon"
+        name="home"
+        color="success"
+      ></ion-icon>
     </button>
 
     <button
       *ngIf="length !== currentQuestion"
       (click)="changeCurrentQuestion.emit(currentQuestion + 1)"
+      [disabled]="isNotCurrentQuestionChoosed"
     >
-      <ion-icon name="chevron-forward-circle"></ion-icon>
-      <div>Następny</div>
+      <ion-icon
+        name="chevron-forward-circle"
+        color="success"
+      ></ion-icon>
     </button>
 
     <button
@@ -21,8 +36,10 @@
       (click)="endTest.emit()"
       [disabled]="!isAllQuestionChoosed"
     >
-      <ion-icon name="person-circle"></ion-icon>
-      <div>Zakończ</div>
+      <ion-icon
+        name="stop-circle"
+        color="success"
+      ></ion-icon>
     </button>
   </ion-tab-bar>
 </ion-tabs>

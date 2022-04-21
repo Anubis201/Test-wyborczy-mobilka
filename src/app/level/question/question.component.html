@@ -2,7 +2,7 @@
   <div class="label">{{ question.text }}</div>
   <mat-progress-bar
     mode="determinate"
-    color="primary"
+    color="accent"
     [value]="currentQuestion * 100 / length"
   >
   </mat-progress-bar>
@@ -10,10 +10,13 @@
 
 <ion-list>
   <ion-item *ngFor="let answer of question.answers; let index = index; trackBy:abra">
-    <ion-label>{{ answer.text }}</ion-label>
+    <ion-label>
+      <span>{{ letters[index] + '. ' }}</span>
+      <span>{{ answer.text }}</span>
+    </ion-label>
     <ion-checkbox
-      slot="start"
-      color="tertiary"
+      slot="end"
+      color="success"
       [(ngModel)]="answer.isChoosed"
       (ngModelChange)="changeAnswer.emit({ answerIndex: index, isChoosed: $event })"
     ></ion-checkbox>

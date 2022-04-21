@@ -2,9 +2,18 @@ button {
   flex: 1 1 0%;
   height: 100%;
   background-color: transparent;
+  transition: opacity 300ms ease-out;
+
+  &[disabled] {
+    opacity: 0.3;
+  }
 
   ion-icon {
-    font-size: 1.8rem;
+    font-size: 2.7rem;
+
+    &.home-icon {
+      font-size: 2.2rem;
+    }
   }
 }
 

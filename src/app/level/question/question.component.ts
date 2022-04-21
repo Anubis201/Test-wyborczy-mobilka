@@ -14,6 +14,8 @@ export class QuestionComponent {
 
   @Output() changeAnswer = new EventEmitter<{ answerIndex: number; isChoosed: boolean }>();
 
+  readonly letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
+
   abra(index: number, asnwer: AnswerModel) {
     return asnwer.text;
   }

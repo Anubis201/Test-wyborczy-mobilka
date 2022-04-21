@@ -19,6 +19,8 @@
     [currentQuestion]="currentQuestion"
     [length]="data.questions.length - 1"
     [isAllQuestionChoosed]="isAllQuestionChoosed"
+    [isNotCurrentQuestionChoosed]="isNotCurrentQuestionChoosed"
+    (goHome)="onGoHome()"
     (changeCurrentQuestion)="onChangeCurrentQuestion($event)"
     (endTest)="onEndTest()"
   ></app-navigation>
