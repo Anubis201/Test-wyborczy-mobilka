@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
+import { ConfirmModalPage } from 'src/app/confirm-modal/confirm-modal.page';
 import { parlamentarne2023 } from 'src/app/data/2023-parlamentarne.data';
 import { parodiaPartii } from 'src/app/data/parodia-partii.data';
-import { ConfirmModalComponent } from 'src/app/shared/confirm-modal/confirm-modal.component';
 import { QuestionModel } from 'src/models/interfaces/question.model';
 import { TestModel } from 'src/models/interfaces/test.model';
 
@@ -56,22 +56,25 @@ export class LevelService {
   }
 
   handleGoHome() {
-
+    this.confirmModal('Czy na pewno chcesz wrócić do wyboru testów? Dane zostaną utracone.').then(val => {
+      console.log(val);
+    });
   }
 
   handleEnd() {
 
   }
 
-  async confirmModal() {
+  async confirmModal(text: string) {
     const modal = await this.modalController.create({
-      component: ConfirmModalComponent,
+      component: ConfirmModalPage,
+      componentProps: {
+        text
+      }
     });
 
-    modal.onDidDismiss().then(dataReturned => {
-      console.log(dataReturned);
-    });
+    modal.present();
 
-    return await modal.present();
+    return await modal.onDidDismiss();
   }
 }

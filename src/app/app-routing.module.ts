@@ -18,7 +18,11 @@ const routes: Routes = [
     path: '',
     redirectTo: 'start',
     pathMatch: 'full'
+  },  {
+    path: 'confirm-modal',
+    loadChildren: () => import('./confirm-modal/confirm-modal.module').then( m => m.ConfirmModalPageModule)
   },
+
 ];
 
 @NgModule({

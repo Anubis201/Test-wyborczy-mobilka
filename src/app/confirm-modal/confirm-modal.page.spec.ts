@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { ConfirmModalComponent } from './confirm-modal.component';
+import { ConfirmModalPage } from './confirm-modal.page';
 
-describe('ConfirmModalComponent', () => {
-  let component: ConfirmModalComponent;
-  let fixture: ComponentFixture<ConfirmModalComponent>;
+describe('ConfirmModalPage', () => {
+  let component: ConfirmModalPage;
+  let fixture: ComponentFixture<ConfirmModalPage>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ ConfirmModalComponent ],
+      declarations: [ ConfirmModalPage ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(ConfirmModalComponent);
+    fixture = TestBed.createComponent(ConfirmModalPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));
