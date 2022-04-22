@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { ModalService } from '../services/modal/modal.service';
 
 @Component({
   selector: 'app-confirm-modal',
@@ -9,9 +9,9 @@ import { ModalController } from '@ionic/angular';
 export class ConfirmModalPage {
   @Input() text: string;
 
-  constructor(private modalController: ModalController) { }
+  constructor(private modalService: ModalService) { }
 
   dismissModal(isConfirm: boolean) {
-    this.modalController.dismiss({ isConfirm });
+    this.modalService.dismissModal(isConfirm);
   }
 }
