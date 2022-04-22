@@ -9,9 +9,15 @@ import { ResultService } from './result-service/result.service';
 })
 export class ResultPage implements OnInit {
 
-  constructor(private resultService: ResultService) { }
+  constructor(private resultService: ResultService,) { }
+
+  get data() { return this.resultService.data; }
 
   ngOnInit() {
     this.resultService.getData();
+  }
+
+  onGoHome() {
+    this.resultService.handleGoHome();
   }
 }

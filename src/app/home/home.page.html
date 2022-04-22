@@ -10,3 +10,8 @@
     [test]="test"
   ></app-start-describe>
 </ion-content>
+
+<app-navigation
+  [isOnlyHome]="true"
+  (goHome)="onGoHome()"
+></app-navigation>

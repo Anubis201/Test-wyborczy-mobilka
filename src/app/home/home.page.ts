@@ -13,4 +13,8 @@ export class HomePage {
   constructor(
     private homeService: HomeService,
   ) {}
+
+  onGoHome() {
+    this.homeService.handleGoHome();
+  }
 }

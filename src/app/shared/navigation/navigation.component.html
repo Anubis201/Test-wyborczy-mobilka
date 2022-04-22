@@ -1,6 +1,7 @@
 <ion-tabs>
   <ion-tab-bar slot="bottom">
     <button
+      *ngIf="!isOnlyHome"
       (click)="changeCurrentQuestion.emit(currentQuestion - 1)"
       [disabled]="currentQuestion === 0"
     >
@@ -10,9 +11,7 @@
       ></ion-icon>
     </button>
 
-    <button
-      (click)="goHome.emit()"
-    >
+    <button (click)="goHome.emit()">
       <ion-icon
         class="home-icon"
         name="home"
@@ -21,7 +20,7 @@
     </button>
 
     <button
-      *ngIf="length !== currentQuestion"
+      *ngIf="length !== currentQuestion && !isOnlyHome"
       (click)="changeCurrentQuestion.emit(currentQuestion + 1)"
       [disabled]="isNotCurrentQuestionChoosed"
     >
@@ -32,7 +31,7 @@
     </button>
 
     <button
-      *ngIf="length === currentQuestion"
+      *ngIf="length === currentQuestion && !isOnlyHome"
       (click)="endTest.emit()"
       [disabled]="!isAllQuestionChoosed"
     >

@@ -11,6 +11,8 @@ export class NavigationComponent {
   @Input() isNotCurrentQuestionChoosed: boolean;
   @Input() isAllQuestionChoosed: boolean;
 
+  @Input() isOnlyHome = false;
+
   @Output() changeCurrentQuestion = new EventEmitter<number>();
   @Output() endTest = new EventEmitter<void>();
   @Output() goHome = new EventEmitter<void>();

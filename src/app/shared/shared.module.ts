@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PartiesIconsComponent } from './parties-icons/parties-icons.component';
+import { NavigationComponent } from './navigation/navigation.component';
+import { IonicModule } from '@ionic/angular';
 
 
 const declarations = [
@@ -8,9 +10,11 @@ const declarations = [
 
   // Components
   PartiesIconsComponent,
+  NavigationComponent,
 ];
 
 const imports = [
+  IonicModule,
 ];
 
 @NgModule({

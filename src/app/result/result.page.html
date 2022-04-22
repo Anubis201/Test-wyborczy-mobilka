@@ -1,9 +1,14 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>result</ion-title>
+    <ion-title>{{ data.title }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <app-content [data]="data"></app-content>
 </ion-content>
+
+<app-navigation
+  [isOnlyHome]="true"
+  (goHome)="onGoHome()"
+></app-navigation>

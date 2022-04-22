@@ -1,0 +1,20 @@
+<ion-card>
+
+  <ion-card-header>
+    <ion-card-title class="title">Wyniki testu</ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content class="parties">
+    <div
+      *ngFor="let item of data.result; let index = index"
+      class="parties__item"
+      [class.parties__item--first]="index === 0"
+    >
+      <img
+        [src]="'/assets/parties/' + partiesEnum[item.party] + '.png'"
+        [alt]="'ikona ' + partiesEnum[item.party]"
+      >
+    </div>
+  </ion-card-content>
+
+</ion-card>
