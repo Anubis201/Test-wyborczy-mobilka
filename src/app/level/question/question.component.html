@@ -1,24 +1,32 @@
-<div class="title">
-  <div class="label">{{ question.text }}</div>
-  <mat-progress-bar
-    mode="determinate"
-    color="accent"
-    [value]="currentQuestion * 100 / length"
-  >
-  </mat-progress-bar>
-</div>
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>
+      <div class="label">{{ question.text }}</div>
+      <mat-progress-bar
+        mode="determinate"
+        color="accent"
+        [value]="currentQuestion * 100 / length"
+      >
+      </mat-progress-bar>
+    </ion-card-title>
+  </ion-card-header>
+</ion-card>
 
-<ion-list>
-  <ion-item *ngFor="let answer of question.answers; let index = index; trackBy:abra">
-    <ion-label>
-      <span>{{ letters[index] + '. ' }}</span>
-      <span>{{ answer.text }}</span>
-    </ion-label>
-    <ion-checkbox
-      slot="end"
-      color="success"
-      [(ngModel)]="answer.isChoosed"
-      (ngModelChange)="changeAnswer.emit({ answerIndex: index, isChoosed: $event })"
-    ></ion-checkbox>
-  </ion-item>
-</ion-list>
+<ion-card>
+  <ion-card-content>
+    <ion-list>
+      <ion-item *ngFor="let answer of question.answers; let index = index; trackBy:abra">
+        <ion-label>
+          <span>{{ letters[index] + '. ' }}</span>
+          <span>{{ answer.text }}</span>
+        </ion-label>
+        <ion-checkbox
+          slot="end"
+          color="success"
+          [(ngModel)]="answer.isChoosed"
+          (ngModelChange)="changeAnswer.emit({ answerIndex: index, isChoosed: $event })"
+        ></ion-checkbox>
+      </ion-item>
+    </ion-list>
+  </ion-card-content>
+</ion-card>
