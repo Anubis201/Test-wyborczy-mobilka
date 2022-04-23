@@ -1,7 +1,10 @@
 {
   "name": "test wyborczy",
   "integrations": {
-    "capacitor": {}
+    "capacitor": {
+      "enabled": false
+    },
+    "cordova": {}
   },
   "type": "angular"
 }
