@@ -6,6 +6,7 @@ import { HomePage } from './home.page';
 import { HomePageRoutingModule } from './home-routing.module';
 import { StartDescribeComponent } from './start-describe/start-describe.component';
 import { SharedModule } from '../shared/shared.module';
+import { MatButtonModule } from '@angular/material/button';
 
 
 @NgModule({
@@ -14,6 +15,7 @@ import { SharedModule } from '../shared/shared.module';
     FormsModule,
     HomePageRoutingModule,
     SharedModule,
+    MatButtonModule
   ],
   declarations: [
     StartDescribeComponent,

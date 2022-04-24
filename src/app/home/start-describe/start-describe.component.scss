@@ -1,5 +1,9 @@
-ion-card-title {
+a {
   text-align: center;
+  margin: 10px;
+  width: 100%;
+  padding: 15px 0px;
+  height: 168px;
 
   ion-icon {
     font-size: 53px;
@@ -11,17 +15,5 @@ ion-card-title {
     font-size: 22px;
     white-space: pre-line;
   }
-}
-
-ion-card {
-  transition: background-color 500ms ease-out;
-
-  &:hover {
-    background-color: #3b3b3b;
-  }
-}
-
-a {
-  text-decoration: none;
 }
 
