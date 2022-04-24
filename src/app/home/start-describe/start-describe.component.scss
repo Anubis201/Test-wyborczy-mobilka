@@ -1,9 +1,24 @@
-ion-card-subtitle {
-  margin-top: .7rem;
+ion-card-title {
+  text-align: center;
+
+  ion-icon {
+    font-size: 53px;
+    margin-bottom: 8px;
+  }
+
+  div {
+    line-height: 35px;
+    font-size: 22px;
+    white-space: pre-line;
+  }
 }
 
-ion-card-title {
-  font-size: 21px;
+ion-card {
+  transition: background-color 500ms ease-out;
+
+  &:hover {
+    background-color: #3b3b3b;
+  }
 }
 
 a {

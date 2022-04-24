@@ -3,12 +3,8 @@ import { TestModel } from 'src/models/interfaces/test.model';
 
 export const parlamentarne2023: TestModel = {
   id: 1,
-  title: 'Wybory parlamentarne 2023',
-  desc: `
-    Rozwiąż prosty test wyborczy i dowiedz się która partia jest ci najbliższa.
-    Zadamy ci 11 pytań, by dopasować partię do twoich odpowiedzi.
-    Pamiętaj, że na końcu wybór należy do ciebie!
-  `,
+  title: 'Wybory parlamentarne',
+  icon: 'archive',
   questions: [
     {
       text: 'Co zrobić z aborcją?',

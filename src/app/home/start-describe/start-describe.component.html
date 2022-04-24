@@ -1,21 +1,10 @@
 <a [routerLink]="['/test', test.title]">
-
   <ion-card>
-
     <ion-card-header>
-
-      <ion-card-title>{{ test.title }}</ion-card-title>
-
-      <ion-card-subtitle>
-
-        <app-parties-icons></app-parties-icons>
-
-      </ion-card-subtitle>
-
+      <ion-card-title>
+        <ion-icon [name]="test.icon"></ion-icon>
+        <div>{{ test.title }}</div>
+      </ion-card-title>
     </ion-card-header>
-
-    <ion-card-content>{{ test.desc }}</ion-card-content>
-
   </ion-card>
-
 </a>

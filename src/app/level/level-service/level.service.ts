@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
-import { ConfirmModalPage } from 'src/app/confirm-modal/confirm-modal.page';
 import { parlamentarne2023 } from 'src/app/data/2023-parlamentarne.data';
 import { parodiaPartii } from 'src/app/data/parodia-partii.data';
+import { ModalService } from 'src/app/services/modal/modal.service';
 import { ToolsService } from 'src/app/services/tools/tools.service';
 import { PartiesEnum } from 'src/models/enums/parties.enum';
 import { QuestionModel } from 'src/models/interfaces/question.model';
@@ -22,8 +22,8 @@ export class LevelService {
   constructor(
     private activatedRoute: ActivatedRoute,
     private router: Router,
-    private modalController: ModalController,
     private toolsService: ToolsService,
+    private modalService: ModalService,
   ) { }
 
   getLevelData() {
@@ -37,7 +37,7 @@ export class LevelService {
   }
 
   handleEndTest() {
-    this.confirmModal('Wszystko gotowe. Chcesz zobaczyć dane?').then(val => {
+    this.modalService.confirmModal('Wszystko gotowe. Chcesz zobaczyć wyniki?').then(val => {
       if (val.data.isConfirm) {
         const result: Partial<ResultType> = {};
 
@@ -91,7 +91,7 @@ export class LevelService {
   }
 
   handleGoHome() {
-    this.confirmModal('Czy, aby na pewno chcesz wrócić do listy testów? Uwaga dane zostaną utracone!').then(val => {
+    this.modalService.confirmModal('Czy, aby na pewno chcesz wrócić do listy testów? Dane zostaną utracone!').then(val => {
       if (val.data.isConfirm) {
         this.router.navigateByUrl('/lista');
       }
@@ -104,16 +104,5 @@ export class LevelService {
     this.isAllQuestionChoosed = false;
     this.isNotCurrentQuestionChoosed = false;
     this.isLoading = true;
-  }
-
-  async confirmModal(text: string) {
-    const modal = await this.modalController.create({
-      component: ConfirmModalPage,
-      componentProps: { text }
-    });
-
-    modal.present();
-
-    return await modal.onDidDismiss();
   }
 }

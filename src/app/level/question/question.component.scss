@@ -1,7 +1,5 @@
 ion-list {
   ion-item {
-    --border-color: grey;
-
     ion-label {
       overflow: inherit;
       white-space: normal;
@@ -10,4 +8,10 @@ ion-list {
       gap: 10px;
     }
   }
+}
+
+.label {
+  margin-left: 1rem;
+  padding-bottom: 0;
+  padding-top: 1.5rem;
 }
