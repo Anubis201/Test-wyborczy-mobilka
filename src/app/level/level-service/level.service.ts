@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ModalController } from '@ionic/angular';
 import { parlamentarne2023 } from 'src/app/data/2023-parlamentarne.data';
 import { parodiaPartii } from 'src/app/data/parodia-partii.data';
 import { ModalService } from 'src/app/services/modal/modal.service';
@@ -30,8 +29,8 @@ export class LevelService {
     this.activatedRoute.params.subscribe({
       next: ({ title }: { title: string }) => {
         this.reset();
-        this.data = JSON.parse(JSON.stringify([parlamentarne2023, parodiaPartii].find(ele => ele.title = title)));
-        this.isLoading = false;
+        this.data = JSON.parse(JSON.stringify([parlamentarne2023, parodiaPartii].find(ele => ele.title === title)));
+        this.isLoading = !this.data;
       }
     });
   }
@@ -87,6 +86,10 @@ export class LevelService {
   }
 
   verifyIsCurrentQuestionChoosed() {
+    if (!this.data.questions.length) {
+      return;
+    }
+
     this.isNotCurrentQuestionChoosed = this.data.questions[this.currentQuestion].answers.every(answer => !answer.isChoosed);
   }
 

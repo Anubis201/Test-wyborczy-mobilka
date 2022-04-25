@@ -8,6 +8,7 @@
 
   <ion-content>
     <app-question
+      *ngIf="data.questions.length"
       [question]="data.questions[currentQuestion]"
       [currentQuestion]="currentQuestion"
       [length]="data.questions.length - 1"
