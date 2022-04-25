@@ -10,7 +10,7 @@
           class="parties__item"
           [class.parties__item--first]="index === 0"
         >
-          <span>{{ index }}.</span>
+          <span>{{ index + 1 }}.</span>
           <img
             [src]="'/assets/parties/' + partiesEnum[item.party] + '.png'"
             [alt]="'ikona ' + partiesEnum[item.party]"

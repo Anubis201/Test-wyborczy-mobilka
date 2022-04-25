@@ -1,12 +1,12 @@
 <ion-card>
   <ion-card-header>
     <ion-card-title>
+      <div class="label">{{ question.text }}</div>
       <mat-progress-bar
         mode="determinate"
         color="accent"
         [value]="currentQuestion * 100 / length"
       ></mat-progress-bar>
-      <div class="label">{{ question.text }}</div>
     </ion-card-title>
   </ion-card-header>
 </ion-card>

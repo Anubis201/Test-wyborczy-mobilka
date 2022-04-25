@@ -6,9 +6,19 @@
 }
 
 .parties {
+  ion-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
 
   &__item {
     display: flex;
+    gap: 13px;
+
+    span {
+      align-self: end;
+    }
 
     img {
       width: 30px;
